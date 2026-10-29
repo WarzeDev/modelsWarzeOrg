@@ -1,0 +1,31 @@
+{
+  "models": [
+    { "name": "Acrobat Katana", "label": "Reskin" },
+    { "name": "Amorrya Mask" },
+    { "name": "Bunny Totem" },
+    { "name": "Charlie's Trident" },
+    { "name": "Crystal Totem" },
+    { "name": "Freaky Pumpkin", "label": "Edit" },
+    { "name": "Ice Dagger", "label": "Reskin" },
+    { "name": "Ice Totem", "label": "Edit" },
+    { "name": "Mario Tophat" },
+    { "name": "Millie's Axe" },
+    { "name": "Mimikyu Winter Hat", "label": "Edit" },
+    { "name": "Moth Antennae" },
+    { "name": "Nether Totem" },
+    { "name": "Plompy" },
+    { "name": "Pumpkin Totem" },
+    { "name": "Red Spear", "label": "Reskin" },
+    { "name": "Seb Tophat", "label": "Reskin" },
+    { "name": "Sebtral Bow" },
+    { "name": "Sebtral Relik" },
+    { "name": "Sebtral Spear" },
+    { "name": "Sebtral Wand" },
+    { "name": "Squidward Totem" },
+    { "name": "Tinee Horns" },
+    { "name": "Tinee Scythe" },
+    { "name": "Tinee Stave", "label": "Edit" },
+    { "name": "Wingul Hat", "label": "Edit" },
+    { "name": "Winter Hood", "label": "Reskin" }
+  ]
+}
