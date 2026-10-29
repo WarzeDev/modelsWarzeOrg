@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * build.js — generates a fully static index.html for the Blockbench model gallery.
+ * build.js - generates a fully static index.html for the Blockbench model gallery.
  *
  *   bun run build.js
  *
@@ -21,13 +21,13 @@ import { join } from "node:path";
 const ROOT = import.meta.dir;
 
 /* ------------------------------------------------------------------ *
- * CONFIG — tweak these
+ * CONFIG
  * ------------------------------------------------------------------ */
 const SITE_URL = "https://models.warze.org"; // canonical URL of the gallery
 const HOME_URL = "https://warze.org"; // "back to homepage" target
 const SITE_NAME = "WarzeDev's Blockbench Models";
 const AUTHOR = "WarzeDev";
-const EAGER_COUNT = 6; // first N thumbnails load eagerly (rest are lazy)
+const EAGER_COUNT = 6;
 
 /* ------------------------------------------------------------------ *
  * Helpers
@@ -90,7 +90,7 @@ if (missing.length) {
  * SEO copy
  * ------------------------------------------------------------------ */
 const description =
-  `Browse ${models.length} custom Minecraft Blockbench models by ${AUTHOR} — ` +
+  `Browse ${models.length} custom Minecraft Blockbench models by ${AUTHOR}. ` +
   `katanas, totems, hats, staves and more. Click a model to view its animation.`;
 
 const keywords = [
@@ -121,7 +121,7 @@ function renderCard(m, i) {
           <span class="thumb">
             <img class="still" src="${m.webp}" alt="${esc(
     m.name
-  )} — Minecraft Blockbench model preview"${
+  )} Minecraft Blockbench model preview"${
     eager ? ' fetchpriority="high"' : ' loading="lazy"'
   } decoding="async">
             ${badge}
@@ -166,7 +166,7 @@ const jsonLd = {
 
 const head = `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>${esc(SITE_NAME)} — Minecraft Blockbench Model Previews</title>
+<title>${esc(SITE_NAME)}</title>
 <meta name="description" content="${esc(description)}">
 <meta name="keywords" content="${esc(keywords)}">
 <meta name="author" content="${esc(AUTHOR)}">
@@ -178,7 +178,7 @@ const head = `<meta charset="utf-8">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(SITE_NAME)}">
-<meta property="og:title" content="${esc(SITE_NAME)} — Minecraft Blockbench Model Previews">
+<meta property="og:title" content="${esc(SITE_NAME)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${SITE_URL}/">
 <meta property="og:image" content="${SITE_URL}/avatar.png">
@@ -204,9 +204,6 @@ ${preloads}
   "\\u003c"
 )}</script>`;
 
-/* ------------------------------------------------------------------ *
- * CSS — performance-tuned (no background-attachment:fixed, no backdrop-filter)
- * ------------------------------------------------------------------ */
 const CSS = `
 @font-face{
   font-family:"Minecraft";
@@ -430,9 +427,6 @@ h1{
 }
 `;
 
-/* ------------------------------------------------------------------ *
- * Client JS — lightbox only (no hover animation)
- * ------------------------------------------------------------------ */
 const JS = `
 (function () {
   var dialog = document.getElementById('viewer');
@@ -513,6 +507,6 @@ ${cards}
 writeFileSync(join(ROOT, "index.html"), html, "utf8");
 
 console.log(
-  `✔ index.html written — ${models.length} models, ${(html.length / 1024).toFixed(1)} kB`
+  `✔ index.html written - ${models.length} models, ${(html.length / 1024).toFixed(1)} kB`
 );
-if (missing.length) console.log(`⚠ ${missing.length} missing asset(s) — see warnings above.`);
+if (missing.length) console.log(`⚠ ${missing.length} missing asset(s) - see warnings above.`);
